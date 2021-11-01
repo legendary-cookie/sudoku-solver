@@ -26,7 +26,7 @@ do
 done < "$input"
 
 code=$(echo ${code%,*} ${code##*,})
-code+="}"
+code+="};"
 
 echo $code | sed 's/x/0/g'
 
