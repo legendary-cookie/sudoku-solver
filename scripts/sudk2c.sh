@@ -1,8 +1,11 @@
 #!/bin/bash
 
 input=$1
+output=$2
+n=$3
+
 # 9x9, change to set different
-code="int puzzle[9][9]={"
+code="int puzzle[$n][$n]={"
 
 
 function text2c () {
@@ -28,6 +31,5 @@ done < "$input"
 code=$(echo ${code%,*} ${code##*,})
 code+="};"
 
-echo $code | sed 's/x/0/g'
-
-
+echo "#define N $n" > "$output"
+echo $code | sed 's/x/0/g' >> "$output"
