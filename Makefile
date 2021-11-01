@@ -1,4 +1,4 @@
-TARGET = BINARY_NAME
+TARGET = solver
 
 CSOURCES = $(shell find src -name \*.c)
 CXXSOURCES += $(shell find src -name \*.cpp)
